@@ -1,0 +1,13 @@
+storage:
+  image: busybox
+  volumes:
+      - /var/lib/postgresql/data
+db:
+  image: postgres:9.6
+  environment:
+    POSTGRES_USER: tenarai
+    POSTGRES_PASSWORD: tenarai
+  ports:
+    - "5432:5432"
+  volumes_from:
+      - storage

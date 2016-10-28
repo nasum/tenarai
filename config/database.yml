@@ -10,12 +10,18 @@ default: &default
 development:
   <<: *default
   database: tenarai_development
+  host: localhost
+  username: tenarai
   password: tenarai
+  port: 5432
 
   test:
   <<: *default
   database: tenarai_test
+  host: localhost
+  username: tenarai
   password: tenarai
+  port: 5432
 
 production:
   <<: *default
