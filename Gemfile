@@ -9,6 +9,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'sorcery'
+gem 'hamlit'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -21,6 +23,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
+  gem 'annotate'
 end
 
 group :development do
