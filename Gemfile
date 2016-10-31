@@ -11,6 +11,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'sorcery'
 gem 'hamlit'
+gem 'honoka-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
