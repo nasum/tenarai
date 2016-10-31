@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %title Tenarai
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "application", 'data-turbolinks-track': 'reload'
+  %body
+    %nav.navbar.navbar-default.navbar-static-top
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#top-menu", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} Tenarai
+        #top-menu.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            - if current_user
+              %li
+                = link_to "Edit Profile", edit_user_path(current_user.id)
+              %li
+                = link_to "Logout", :logout, method: :post
+            - else
+              %li
+                = link_to "Register", new_user_path
+              %li
+                = link_to "Login", :login
+    .container-fluid
+      .row
+        = yield
