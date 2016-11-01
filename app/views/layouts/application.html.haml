@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Tenarai
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application',
+                          'data-turbolinks-track': 'reload',
+                          media: 'all'
+    = javascript_include_tag 'application',
+                             'data-turbolinks-track': 'reload'
+  %body
+    .tenarai-header
+      .container
+        %nav.blog-nav
+          %a.blog-nav-item.active
+            Home
+    = yield
