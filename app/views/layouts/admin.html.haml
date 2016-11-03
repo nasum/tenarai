@@ -23,16 +23,10 @@
           %a.navbar-brand{ href: "#" } Tenarai
         .collapse.navbar-collapse#top-menu
           %ul.nav.navbar-nav.navbar-right
-            - if current_user
-              %li
-                = link_to "Edit Profile", edit_user_path(current_user.id)
-              %li
-                = link_to "Logout", :logout, method: :post
-            - else
-              %li
-                = link_to "Register", new_user_path
-              %li
-                = link_to "Login", :login
+            %li
+              = link_to "Edit Profile", edit_user_path(current_user.id)
+            %li
+              = link_to "Logout", :admin_user_sessions, method: :delete
     .container-fluid
       .row
         = yield

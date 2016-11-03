@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UserSessionsController, type: :controller do
+RSpec.describe Admin::UserSessionsController, type: :controller do
 
   describe "GET #new" do
     it "returns http success" do
@@ -18,7 +18,7 @@ RSpec.describe UserSessionsController, type: :controller do
 
   describe "GET #destroy" do
     it "returns http success" do
-      get :destroy
+      post :destroy
       expect(response).to have_http_status(302)
     end
   end
