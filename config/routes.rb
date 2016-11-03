@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :home, only: :index
+    resources :user_sessions, only: [ :new, :create, :destroy ]
   end
-
-  get 'login' => 'user_sessions#new', :as => :login
-  post 'logout' => 'user_sessions#destroy', :as => :logout
 end
