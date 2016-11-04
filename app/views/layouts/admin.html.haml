@@ -24,7 +24,7 @@
         .collapse.navbar-collapse#top-menu
           %ul.nav.navbar-nav.navbar-right
             %li
-              = link_to "Edit Profile", edit_user_path(current_user.id)
+              = link_to "Edit Profile", edit_admin_user_path(current_user.id)
             %li
               = link_to "Logout", :admin_user_sessions, method: :delete
     .container-fluid
