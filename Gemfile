@@ -21,6 +21,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'hirb'
+  gem 'hirb-unicode'
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
@@ -34,6 +35,11 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'bullet'
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rack-mini-profiler'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
