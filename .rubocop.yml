@@ -7,3 +7,6 @@ AllCops:
 
 Rails:
   Enabled: true
+
+LineLength:
+  Max: 100
