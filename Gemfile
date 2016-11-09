@@ -11,6 +11,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'sorcery'
 gem 'hamlit'
+gem 'hamlit-rails'
 gem 'honoka-rails'
 gem 'sprockets-es6'
 
