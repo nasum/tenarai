@@ -3,26 +3,20 @@ require 'rails_helper'
 RSpec.describe Admin::Article, type: :model do
   describe '#create' do
     context 'when all column fill' do
-      let(:article) { create(:article) }
-
-      it 'don`t create record' do
-        expect{ :article }.to change{ Admin::Article.count }.by(1)
+      it 'create record' do
+        expect{ create(:article) }.to change{ Admin::Article.count }.by(1)
       end
     end
 
     context 'when not fill content column' do
-      let(:article) { create(:article, content: '') }
-
       it 'don`t create record' do
-        expect{ :article }.to change{ Admin::Article.count }.by(0)
+        expect( build(:article, content: '') ).to_not be_valid
       end
     end
 
     context 'when fill blank to content column' do
-      let(:article) { create(:article, content: '    ') }
-
       it 'don`t create record' do
-        expect{ :article }.to change{ Admin::Article.count }.by(0)
+        expect( build(:article, content: '    ') ).to_not be_valid
       end
     end
   end
@@ -32,30 +26,26 @@ RSpec.describe Admin::Article, type: :model do
 
     context 'when all column fill' do
       let(:edit_content) { Faker::Lorem.sentence }
-      let(:edit_article) { article.update(content: edit_context) }
+      let(:edit_article) { article.update(content: edit_content) }
 
       it 'save record' do
-        expect{ edit_article.context }.to eq edit_content
-      end
-
-      it 'valid' do
-        expect{ edit_article }.to be_valid
+        expect( edit_article ).to be_truthy
       end
     end
 
     context 'when not fill content column' do
-      let(:edit_article) { article.content = '' }
+      let(:edit_article) { article.update(content: '') }
 
       it 'raise validation error' do
-        expect{ :edit_article }.not_to be_valid
+        expect( edit_article ).to be_falsey
       end
     end
 
     context 'when fill blank to content column' do
-      let(:edit_article) { article.content = '   ' }
+      let(:edit_article) { article.update(content: ' ') }
 
       it 'raise validation error' do
-        expect{ :edit_article }.not_to be_valid
+        expect( edit_article ).to be_falsey
       end
     end
   end
