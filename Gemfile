@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'sorcery'
 gem 'hamlit'
 gem 'honoka-rails'
+gem 'sprockets-es6'
 
 group :development, :test do
   gem 'byebug', platform: :mri
