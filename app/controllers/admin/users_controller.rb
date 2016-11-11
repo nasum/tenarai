@@ -31,7 +31,7 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(:users, notice: 'User was successfully created') }
+        format.html { redirect_to(:admin_users, notice: 'User was successfully created') }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -71,6 +71,6 @@ class Admin::UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:admin_user).permit(:name, :email, :password, :password_confirmation)
     end
 end
