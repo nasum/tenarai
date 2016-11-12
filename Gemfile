@@ -14,6 +14,7 @@ gem 'hamlit'
 gem 'hamlit-rails'
 gem 'honoka-rails'
 gem 'sprockets-es6'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platform: :mri
