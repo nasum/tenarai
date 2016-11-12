@@ -1,7 +1,7 @@
 class Admin::ArticlesController < ApplicationController
   layout "admin"
 
-  before_action :set_article, only: [:edit, :show, :update]
+  before_action :set_article, only: [:edit, :show, :update, :destroy]
 
   def index
     @articles = Admin::Article.page(1).per(10).order("created_at DESC")
@@ -29,11 +29,16 @@ class Admin::ArticlesController < ApplicationController
     if @article.update_attributes(article_params(params))
       render action: :show, layout: "article"
     else
-      render 'edit'
+      render action: :edit
     end
   end
 
   def destroy
+    if @article.destroy
+      redirect_to action: :index
+    else
+      redirect_to action: :edit
+    end
   end
 
   private
