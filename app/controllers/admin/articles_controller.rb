@@ -11,12 +11,13 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Admin::Article.find params[:id]
+    @article = current_user.articles.find params[:id]
     render layout: "article"
   end
 
   def show
     @article = Admin::Article.find params[:id]
+    render layout: "article"
   end
 
   def create
