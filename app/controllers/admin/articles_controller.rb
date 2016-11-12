@@ -26,7 +26,7 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def update
-    @article = Admin::Article.find params[:id]
+    @article = current_user.articles.find params[:id]
     if @article.update_attributes(article_params(params))
       render action: :show, layout: "article"
     else
