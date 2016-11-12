@@ -1,5 +1,7 @@
-.caontainer
+.container
   .row
     .col-md-12
-      index
+      = link_to new_admin_article_path, class:'btn btn-default btn-lg' do
+        %span.glyphicon.glyphicon-plus
+        %span New Article
       = paginate @articles

@@ -9,22 +9,7 @@
     = javascript_include_tag 'application',
                              'data-turbolinks-track': 'reload'
   %body
-    %nav.navbar.navbar-default
-      .container-fluid
-        .navbar-header
-          %button.navbar-toggle.collapsed{ "aria-expanded": "false",
-                                           "data-target": "#top-menu",
-                                           "data-toggle": "collapse",
-                                           type: "button" }
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{ href: "#" } Tenarai
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to "Logout", :admin_user_sessions, method: :delete
+    = render partial: "layouts/admin_header"
     .container-fluid
       .row
         .col-sm-3.col-md-2.sidebar

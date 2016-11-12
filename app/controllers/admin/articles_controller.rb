@@ -6,9 +6,11 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def new
+    render layout: "article"
   end
 
   def edit
+    render layout: "article"
   end
 
   def show
