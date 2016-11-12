@@ -8,5 +8,10 @@ AllCops:
 Rails:
   Enabled: true
 
-LineLength:
+Metrics/LineLength:
   Max: 100
+
+Metrics/LineLength:
+  Max: 160
+  Exclude:
+    - "db/migrate/*.rb"

@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-md-12
+      %p
+        = @article.content
+  .row
+    .col-md-12
+      .btn-group
+        = link_to admin_articles_path, class: 'btn btn-default btn-lg' do
+          .glyphicon.glyphicon-arrow-left
+          index
+        = link_to edit_admin_article_path(@article), class: 'btn btn-default btn-lg' do
+          .glyphicon.glyphicon-pencil
+          edit

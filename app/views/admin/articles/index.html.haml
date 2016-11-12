@@ -1,0 +1,26 @@
+.container
+  .row
+    .col-md-12
+      .container
+        .row
+          .col-md-12
+            %p
+              = link_to new_admin_article_path, class:'btn btn-default btn-lg' do
+                %span.glyphicon.glyphicon-plus
+                %span New Article
+        .row
+          .col-md-12
+            %ul.list-group
+              - @articles.each do |article|
+                %li.list-group-item
+                  %span
+                    = article.content
+                  %span
+                    = link_to edit_admin_article_path(article), class: 'btn btn-default btn-sm' do
+                      .glyphicon.glyphicon-pencil
+                      Edit
+                  .badge
+                    = article.created_at
+        .row
+          .col-md-12
+            = paginate @articles

@@ -1,0 +1,8 @@
+.container
+  .row
+    .col-md-1
+      = link_to admin_article_path(@article), class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' }  do
+        .glyphicon.glyphicon-remove
+        delete
+    .col-md-11
+      = render partial: 'form', locals: { article: @article }
