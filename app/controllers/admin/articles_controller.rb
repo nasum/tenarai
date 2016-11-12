@@ -1,6 +1,8 @@
 class Admin::ArticlesController < ApplicationController
   layout "admin"
 
+  before_action :set_article, only: [:edit, :show, :update]
+
   def index
     @articles = Admin::Article.page(1).per(10).order("created_at DESC")
   end
@@ -11,12 +13,10 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def edit
-    @article = current_user.articles.find params[:id]
     render layout: "article"
   end
 
   def show
-    @article = Admin::Article.find params[:id]
     render layout: "article"
   end
 
@@ -26,7 +26,6 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def update
-    @article = current_user.articles.find params[:id]
     if @article.update_attributes(article_params(params))
       render action: :show, layout: "article"
     else
@@ -38,6 +37,10 @@ class Admin::ArticlesController < ApplicationController
   end
 
   private
+
+  def set_article
+    @article = current_user.articles.find params[:id]
+  end
 
   def article_params(params)
     params.require(:admin_article).permit([:content])
