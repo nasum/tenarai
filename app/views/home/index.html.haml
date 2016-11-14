@@ -6,5 +6,13 @@
       Tenarai is created by Ruby on Rails.
 .container
   .row
-    .col-md-9
-      content
+    .col-md-offset-1.col-md-10
+      - @articles.each do |article|
+        %article.blog-post
+          .content
+            = article.content
+          .datetime
+            = article.created_at
+  .row
+    .col-md-offset-1.col-md-10
+      = paginate @articles
