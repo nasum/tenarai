@@ -8,11 +8,12 @@
   .row
     .col-md-offset-1.col-md-10
       - @articles.each do |article|
-        %article.blog-post
-          .content
-            = article.content
-          .datetime
-            = article.created_at
+        %article.blog-post.panel.panel-default
+          .panel-body
+            .content
+              = article.content
+            .datetime.text-right
+              = article.created_at
   .row
     .col-md-offset-1.col-md-10
       = paginate @articles
