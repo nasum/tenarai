@@ -1,14 +1,14 @@
-class Admin::ArticlesController < ApplicationController
+class ArticlesController < ApplicationController
   layout "admin"
 
   before_action :set_article, only: [:edit, :show, :update, :destroy]
 
   def index
-    @articles = Admin::Article.where(user: current_user).page(1).per(10).order("created_at DESC")
+    @articles = Article.where(user: current_user).page(1).per(10).order("created_at DESC")
   end
 
   def new
-    @article = Admin::Article.new(user: current_user)
+    @article = Article.new(user: current_user)
     render layout: "article"
   end
 

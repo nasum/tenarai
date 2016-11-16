@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Admin::Article, type: :model do
+RSpec.describe Article, type: :model do
   describe '#create' do
     context 'when all column fill' do
       it 'create record' do

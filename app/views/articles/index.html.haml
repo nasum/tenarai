@@ -5,7 +5,7 @@
         .row
           .col-md-12
             %p
-              = link_to new_admin_article_path, class:'btn btn-default btn-lg' do
+              = link_to new_article_path, class:'btn btn-default btn-lg' do
                 %span.glyphicon.glyphicon-plus
                 %span New Article
         .row
@@ -16,7 +16,7 @@
                   %span
                     = article.content
                   %span
-                    = link_to edit_admin_article_path(article), class: 'btn btn-default btn-sm' do
+                    = link_to edit_article_path(article), class: 'btn btn-default btn-sm' do
                       .glyphicon.glyphicon-pencil
                       Edit
                   .badge

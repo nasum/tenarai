@@ -4,9 +4,7 @@ Rails.application.routes.draw do
 
   get "admin" => 'admin/home#index'
 
-  namespace :admin do
-    resources :users
-    resource :user_sessions, only: [ :new, :create, :destroy ]
-    resources :articles
-  end
+  resources :users
+  resource :user_sessions, only: [ :new, :create, :destroy ]
+  resources :articles
 end

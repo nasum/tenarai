@@ -1,8 +1,8 @@
-class Admin::UserSessionsController < ApplicationController
+class UserSessionsController < ApplicationController
   skip_before_action :require_login, except: [:destroy]
 
   def new
-    @user = Admin::User.new
+    @user = User.new
   end
 
   def create
