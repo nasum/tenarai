@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  layout "admin"
+  layout "dashboard"
 
   before_action :set_article, only: [:edit, :show, :update, :destroy]
 
