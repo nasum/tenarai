@@ -15,6 +15,6 @@
           %a.blog-nav-item.active
             Home
           - if current_user
-            = link_to "Logout", :admin_user_sessions, method: :delete,
+            = link_to "Logout", :user_sessions, method: :delete,
                                                       class: 'navbar-right'
     = yield

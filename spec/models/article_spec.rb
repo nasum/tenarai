@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Admin::Article, type: :model do
+RSpec.describe Article, type: :model do
   describe '#create' do
     context 'when all column fill' do
       it 'create record' do
-        expect{ create(:article) }.to change{ Admin::Article.count }.by(1)
+        expect{ create(:article) }.to change{ Article.count }.by(1)
       end
     end
 
