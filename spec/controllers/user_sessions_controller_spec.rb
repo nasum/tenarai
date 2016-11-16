@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Admin::UserSessionsController, type: :controller do
+RSpec.describe UserSessionsController, type: :controller do
 
   describe "GET #new" do
     it "returns http success" do
