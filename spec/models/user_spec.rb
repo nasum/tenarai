@@ -10,4 +10,24 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe "#create" do
+    context "when duplicate name" do
+      before { create(:user, name: 'name') }
+      let (:user) { build(:user, name: 'name') }
+
+      it "don`t save user" do
+        expect(user.save).to be_falsey
+      end
+    end
+
+    context "when duplicate email" do
+      before { create(:user, email: 'hoge@hoge.com') }
+      let (:user) { build(:user, email: 'hoge@hoge.com') }
+
+      it "don`t save user" do
+        expect(user.save).to be_falsey
+      end
+    end
+  end
 end
