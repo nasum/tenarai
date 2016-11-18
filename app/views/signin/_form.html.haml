@@ -1,9 +1,18 @@
-= form_tag signin_path, :method => :post do
+= form_for signin, url: signin_path do |f|
+  - if signin.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(signin.errors.count, "error")
+      %ul
+        - signin.errors.full_messages.each do |message|
+          %li
+            = message
+
   .form-group
-    = label_tag :email
-    = text_field_tag :email, nil, class: 'form-control'
+    = f.label :email
+    = f.text_field :email, class: 'form-control'
   .form-group
-    = label_tag :password
-    = password_field_tag :password, nil, class: 'form-control'
+    = f.label :password
+    = f.password_field :password, class: 'form-control'
   .actions
-    = submit_tag "Login"
+    = f.submit "Login", class: 'btn btn-primary'

@@ -2,11 +2,12 @@ class SigninController < ApplicationController
   skip_before_action :require_login, except: [:destroy]
 
   def new
-    @user = User.new
+    @signin = Signin.new
   end
 
   def create
-    if @user = login(params[:email], params[:password])
+    @signin = Signin.new(signin_params)
+    if @signin.valid? && @user = login(@signin.email, @signin.password)
       redirect_back_or_to(:dashboard_index, notice: 'Login successful')
     else
       flash.now[:alert] = 'Login failed'
@@ -17,5 +18,11 @@ class SigninController < ApplicationController
   def destroy
     logout
     redirect_to(:root, notice: 'Logged out!')
+  end
+
+  private
+
+  def signin_params
+    params.require(:signin).permit([:email, :password])
   end
 end
