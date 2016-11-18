@@ -15,7 +15,7 @@
           = link_to 'Home', root_path, class: 'blog-nav-item'
           = link_to 'Members', member_index_path, class: 'blog-nav-item'
           - if current_user
-            = link_to "Logout", :user_sessions, action: :delete,
+            = link_to "Logout", :signin, action: :delete,
                                                       class: 'navbar-right'
           - else
             = link_to "Signin", :signin, action: :new, class: 'navbar-right'

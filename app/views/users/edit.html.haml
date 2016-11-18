@@ -1,0 +1,10 @@
+.row
+  .col-md-12
+    %p
+      = link_to @user, class: 'btn btn-default btn-lg' do
+        %span.glyphicon.glyphicon-arrow-left
+        %span
+          Back
+.row
+  .col-md-12
+    = render 'form', user: @user
