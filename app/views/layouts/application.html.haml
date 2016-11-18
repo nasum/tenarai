@@ -12,8 +12,8 @@
     .tenarai-header
       .container
         %nav.blog-nav
-          %a.blog-nav-item.active
-            Home
+          = link_to 'Home', root_path, class: 'blog-nav-item'
+          = link_to 'Members', member_index_path, class: 'blog-nav-item'
           - if current_user
             = link_to "Logout", :user_sessions, method: :delete,
                                                       class: 'navbar-right'

@@ -1,0 +1,19 @@
+.jumbotron
+  .container
+    %h1
+      Tenarai
+    %p
+      Tenarai is created by Ruby on Rails.
+.container
+  .row
+    .col-md-offset-1.col-md-10
+      - @articles.each do |article|
+        %article.blog-post.panel.panel-default
+          .panel-body
+            .content
+              = article.content
+            .datetime.text-right
+              = article.created_at
+  .row
+    .col-md-offset-1.col-md-10
+      = paginate @articles

@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-md-offset-1.col-md-10
+      %h1 Members
+  .row
+    .col-md-offset-1.col-md-10
+      - @members.each do |member|
+        %article.blog-post.panel.panel-default
+          .panel-body
+            .content
+              = link_to member.name, "@#{member.name}"
+  .row
+    .col-md-offset-1.col-md-10
+      = paginate @members
