@@ -6,7 +6,7 @@ class SigninController < ApplicationController
   end
 
   def create
-    @signin = Signin.new(signin_params)
+    @signin = Signin.new(email: params[:email], password: params[:password])
     if @signin.valid? && @user = login(@signin.email, @signin.password)
       redirect_back_or_to(:dashboard_index, notice: 'Login successful')
     else
@@ -18,11 +18,5 @@ class SigninController < ApplicationController
   def destroy
     logout
     redirect_to(:root, notice: 'Logged out!')
-  end
-
-  private
-
-  def signin_params
-    params.require(:signin).permit([:email, :password])
   end
 end
