@@ -17,4 +17,7 @@
           - if current_user
             = link_to "Logout", :user_sessions, method: :delete,
                                                       class: 'navbar-right'
+          - else
+            = link_to "Signin", :signin, method: :new,
+                                                      class: 'navbar-right'
     = yield

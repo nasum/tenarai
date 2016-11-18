@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :dashboard, only: :index
 
   resources :users
-  resource :user_sessions, only: [ :new, :create, :destroy ]
+  get 'signin', to: 'signin#new'
+  resource :signin, controller: :signin, only: [ :create, :destroy ]
   resources :articles
   get ':user_name', to: 'user_articles#index'
 end
