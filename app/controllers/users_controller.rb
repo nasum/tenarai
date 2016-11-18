@@ -2,17 +2,10 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_action :require_login, only: [:new, :create]
 
-  layout "dashboard"
-
-  # GET /users
-  # GET /users.json
-  def index
-    @users = User.all
-  end
-
   # GET /users/1
   # GET /users/1.json
   def show
+    render layout: "dashboard"
   end
 
   # GET /users/new
@@ -22,6 +15,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    render layout: "dashboard"
   end
 
   # POST /users
@@ -29,12 +23,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to(:users, notice: 'User was successfully created') }
-      else
-        format.html { render :new }
-      end
+    if @user.save
+      login(@user.email, @user.password)
+      redirect_to(:dashboard_index, notice: 'User was successfully created')
+    else
+      render :new
     end
   end
 
@@ -45,7 +38,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
       else
-        format.html { render :edit }
+        format.html { render :edit, layout: "dashboard" }
       end
     end
   end
