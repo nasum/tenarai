@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :member, only: :index
   resources :dashboard, only: :index
 
-  resources :users
+  resources :users, except: :index
   get 'signin', to: 'signin#new'
   resource :signin, controller: :signin, only: [ :create, :destroy ]
   resources :articles
