@@ -17,7 +17,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    render layout: "article"
   end
 
   def create
@@ -27,7 +26,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update_attributes(article_params(params))
-      render action: :show, layout: "article"
+      render action: :show, layout: "dashboard"
     else
       render action: :edit
     end
