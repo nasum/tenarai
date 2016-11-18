@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to :new_user_sessions, alert: "Please login first"
+    redirect_to :root
   end
 end
