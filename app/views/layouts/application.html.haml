@@ -13,6 +13,9 @@
       .container
         %nav.blog-nav
           = link_to 'Home', root_path, class: 'blog-nav-item'
+          - if current_user
+            = link_to "Dashboard", :dashboard_index, action: :delete,
+                                                      class: 'blog-nav-item'
           = link_to 'Members', member_index_path, class: 'blog-nav-item'
           - if current_user
             = link_to "Logout", :signin, action: :delete,
