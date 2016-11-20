@@ -18,7 +18,7 @@
                                                       class: 'blog-nav-item'
           = link_to 'Members', member_index_path, class: 'blog-nav-item'
           - if current_user
-            = link_to "Logout", :signin, action: :delete,
+            = link_to "Logout", :signin, method: :delete,
                                                       class: 'navbar-right'
           - else
             .navbar-right
