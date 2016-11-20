@@ -1,19 +1,18 @@
 class ArticlesController < ApplicationController
-  layout "dashboard"
+  layout "article"
 
   before_action :set_article, only: [:edit, :show, :update, :destroy]
 
   def index
     @articles = Article.where(user: current_user).page(1).per(10).order("created_at DESC")
+    render layout: "dashboard"
   end
 
   def new
     @article = Article.new(user: current_user)
-    render layout: "article"
   end
 
   def edit
-    render layout: "article"
   end
 
   def show
@@ -21,12 +20,12 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.create(article_params(params))
-    render action: :show, layout: "article"
+    render action: :show
   end
 
   def update
     if @article.update_attributes(article_params(params))
-      render action: :show, layout: "dashboard"
+      render action: :show
     else
       render action: :edit
     end
