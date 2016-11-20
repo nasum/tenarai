@@ -1,6 +1,6 @@
 .container
   .row
-    .col-md-3
+    .col-md-offset-1.col-md-10
       %h1 Login
       = render partial: 'form', locals: { signin: @signin }
       = link_to 'Back', root_path

@@ -21,5 +21,9 @@
             = link_to "Logout", :signin, action: :delete,
                                                       class: 'navbar-right'
           - else
-            = link_to "Signin", :signin, action: :new, class: 'navbar-right'
+            .navbar-right
+              Sign
+              = link_to "up", :new_user, class: 'blog-nav-item'
+              \/
+              = link_to "in", :signin, action: :new, class: 'blog-nav-item'
     = yield
