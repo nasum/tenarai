@@ -8,7 +8,7 @@ class SigninController < ApplicationController
   def create
     @signin = Signin.new(email: signin_params[:email], password: signin_params[:password])
     if @signin.valid? && @user = login(@signin.email, @signin.password)
-      redirect_back_or_to(:dashboard_index, notice: 'Login successful')
+      redirect_back_or_to(:dashboard_index, success: 'Login successful')
     else
       flash.now[:alert] = 'Login failed'
       render action: 'new'
@@ -17,7 +17,7 @@ class SigninController < ApplicationController
 
   def destroy
     logout
-    redirect_to(:root, notice: 'Logged out!')
+    redirect_to(:root, success: 'Logged out!')
   end
 
   private

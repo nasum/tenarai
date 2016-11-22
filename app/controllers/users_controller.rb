@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
     if @user.save
       login(@user.email, @user.password)
-      redirect_to(:dashboard_index, notice: 'User was successfully created')
+      redirect_to(:dashboard_index, success: 'User was successfully created')
     else
       render :new
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, success: 'User was successfully updated.' }
       else
         format.html { render :edit, layout: "dashboard" }
       end
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, success: 'User was successfully destroyed.' }
     end
   end
 
