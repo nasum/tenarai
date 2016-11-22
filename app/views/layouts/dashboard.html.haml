@@ -9,7 +9,9 @@
     = javascript_include_tag 'application',
                              'data-turbolinks-track': 'reload'
   %body
-    = render partial: "layouts/dashboard_header"
+    = render partial: "layouts/header"
+    - flash.each do |key, value|
+      = content_tag(:div, value, class: "alert bg-#{key}")
     .container-fluid
       .row
         .col-sm-3.col-md-2.sidebar
