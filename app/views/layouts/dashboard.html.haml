@@ -12,17 +12,18 @@
     = render partial: "layouts/header"
     - flash.each do |key, value|
       = content_tag(:div, value, class: "alert bg-#{key}")
-    .container-fluid
-      .row
-        .col-sm-3.col-md-2.sidebar
-          %ul.nav.nav-pills.nav-stacked
-            %li.active
-              = link_to "Overview", dashboard_index_path
-            %li
-              = link_to "Profile", user_path(current_user)
-            %li
-              = link_to "Articles", articles_path(current_user)
-            %li
-              = link_to "Home", root_path
-        .col-sm-9.col-md-10.main
-          = yield
+    .dashboard-main
+      .container
+        .row
+          .col-sm-3.col-md-2.sidebar
+            %ul.nav.nav-pills.nav-stacked
+              %li.active
+                = link_to "Overview", dashboard_index_path
+              %li
+                = link_to "Profile", user_path(current_user)
+              %li
+                = link_to "Articles", articles_path(current_user)
+              %li
+                = link_to "Home", root_path
+          .col-sm-9.col-md-10.main
+            = yield
