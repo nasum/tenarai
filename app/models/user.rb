@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :name, uniqueness: true
   validates :email, uniqueness: true
 
+  mount_uploader :image, UserImageUploader
+
   def to_param
     name
   end

@@ -16,6 +16,8 @@ gem 'honoka-rails'
 gem 'sprockets-es6'
 gem 'kaminari'
 gem 'redcarpet'
+gem 'carrierwave'
+gem "mini_magick"
 
 group :development, :test do
   gem 'byebug', platform: :mri
