@@ -8,6 +8,7 @@
         %article.blog-post.panel.panel-default
           .panel-body
             .content
+              = image_tag member.image.thumb.url, class: 'img-circle', width: 50, height: 50
               = link_to member.name, "@#{member.name}"
   .row
     .col-md-offset-1.col-md-10
