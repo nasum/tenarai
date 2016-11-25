@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      login(@user.email, @user.password)
+      auto_login @user
       redirect_to(:dashboard_index, success: 'User was successfully created')
     else
       render :new
