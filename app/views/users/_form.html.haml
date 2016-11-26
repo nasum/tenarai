@@ -21,6 +21,7 @@
     = f.password_field :password_confirmation, class: 'form-control'
   .form-group
     = f.label :image, "user image"
+    = f.hidden_field :image_cache
     = f.file_field :image
   .actions
     = f.submit 'Create', class: 'btn btn-primary'
