@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-md-12
+      %p
+        = image_tag @member.image.url, class: 'img-rounded'
+        %ul.list-group
+          %li.list-group-item
+            %strong Name:
+            = @member.name
+          %li.list-group-item
+            %strong Email:
+            = @member.email

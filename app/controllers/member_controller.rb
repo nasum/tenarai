@@ -4,4 +4,8 @@ class MemberController < ApplicationController
   def index
     @members = User.all.page(1).per(10).order("created_at DESC")
   end
+
+  def show
+    @member = User.find(params[:id])
+  end
 end
