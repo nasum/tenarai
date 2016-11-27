@@ -1,16 +1,14 @@
-.container
-  .row
-    .col-md-offset-1.col-md-10
-      %h1 Members
-  .row
-    .col-md-offset-1.col-md-10
-      - @members.each do |member|
-        %article.blog-post.panel.panel-default
-          .panel-body
-            .content
-              = image_tag member.image.thumb.url, class: 'img-circle', width: 50, height: 50
-              = link_to member.name, "@#{member.name}"
-              = link_to "descripsion", member_path(member.id), actions: :show
-  .row
-    .col-md-offset-1.col-md-10
-      = paginate @members
+.content-body
+  .container
+    .row
+      .col-md-offset-1.col-md-10
+        - @members.each do |member|
+          %article.blog-post.panel.panel-default
+            .panel-body
+              .content
+                = image_tag member.image.thumb.url, class: 'img-circle', width: 50, height: 50
+                = link_to member.name, "@#{member.name}"
+                = link_to "descripsion", member_path(member.id), actions: :show
+    .row
+      .col-md-offset-1.col-md-10
+        = paginate @members

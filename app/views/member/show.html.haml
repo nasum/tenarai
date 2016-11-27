@@ -1,8 +1,14 @@
-.container
-  .row
-    .col-md-12
-      %p
-        = image_tag @member.image.url, class: 'img-rounded'
+.content-body
+  .container
+    .row
+      .col-md-offset-2.col-md-8
+        = link_to member_index_path, class: 'btn btn-default btn-lg' do
+          .glyphicon.glyphicon-arrow-left
+          Back
+    .row
+      .col-md-offset-2.col-md-8
+        %p.text-center
+          = image_tag @member.image.url, class: 'img-rounded'
         %ul.list-group
           %li.list-group-item
             %strong Name:

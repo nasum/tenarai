@@ -1,15 +1,16 @@
-.container
-  .row
-    .col-md-12
-      .panel.panel-default
-        .panel-body
-          = markdown @article.content
-  .row
-    .col-md-12
-      .btn-group
-        = link_to articles_path, class: 'btn btn-default btn-lg' do
-          .glyphicon.glyphicon-arrow-left
-          index
-        = link_to edit_article_path(@article), class: 'btn btn-default btn-lg' do
-          .glyphicon.glyphicon-pencil
-          edit
+.content-body
+  .container
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-body
+            = markdown @article.content
+    .row
+      .col-md-12
+        .btn-group
+          = link_to articles_path, class: 'btn btn-default btn-lg' do
+            .glyphicon.glyphicon-arrow-left
+            index
+          = link_to edit_article_path(@article), class: 'btn btn-default btn-lg' do
+            .glyphicon.glyphicon-pencil
+            edit
