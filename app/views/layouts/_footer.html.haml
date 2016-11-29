@@ -1,0 +1,14 @@
+%footer
+  .container
+    %nav
+      %ul
+        %li
+          = link_to 'Home', root_path, class: 'blog-nav-item'
+        %li
+          - if current_user
+            = link_to "Dashboard", :dashboard_index, action: :delete,
+                                                      class: 'blog-nav-item'
+        %li
+          = link_to 'Members', member_index_path, class: 'blog-nav-item'
+    %p.text-center
+      Copyright 2016

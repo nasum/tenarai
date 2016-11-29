@@ -3,13 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "base_color";
 
-.tenarai-header {
+@mixin nav-style {
   background-color: $primary_color;
   color: $primary_font_color;
   a {
     color: $primary_font_color;
     cursor: pointer;
   }
+
+  li {
+    list-style: none;
+  }
+}
+
+header {
+  @include nav-style();
+}
+
+footer {
+  @include nav-style();
 }
 
 .content-body {

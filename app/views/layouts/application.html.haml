@@ -13,3 +13,4 @@
     - flash.each do |key, value|
       = content_tag(:div, value, class: "alert bg-#{key}")
     = yield
+    = render partial: "layouts/footer"
