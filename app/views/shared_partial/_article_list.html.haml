@@ -1,0 +1,9 @@
+- articles.each do |article|
+  %article.blog-post.panel.panel-default
+    .panel-body
+      .content
+        = markdown article.content
+      .datetime.text-right
+        = link_to "@#{article.user.name}" do
+          = image_tag article.user.image.thumb.url, class: 'img-circle', width: 50, height: 50
+        = article.created_at

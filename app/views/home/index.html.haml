@@ -2,14 +2,8 @@
 .content-body
   .container
     .row
-      .col-md-offset-1.col-md-10
-        - @articles.each do |article|
-          %article.blog-post.panel.panel-default
-            .panel-body
-              .content
-                = markdown article.content
-              .datetime.text-right
-                = article.created_at
+      .col-md-12
+        = render partial: 'shared_partial/article_list', locals: { articles: @articles }
     .row
       .col-md-offset-1.col-md-10
         = paginate @articles
