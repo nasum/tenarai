@@ -1,3 +1,8 @@
+- if articles.empty?
+  %article.blog-post.panel.panel-default
+    .panel-body
+      .content.text-center
+        no content
 - articles.each do |article|
   %article.blog-post.panel.panel-default
     .panel-body
