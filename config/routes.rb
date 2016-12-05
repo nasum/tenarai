@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get 'signin', to: 'signin#new'
   resource :signin, controller: :signin, only: [ :create, :destroy ]
   resources :articles
-  get ':user_name', to: 'user_articles#index'
+  get ':user_name', to: 'user_articles#index', constraints: {user_name: /@.*/}
 end
