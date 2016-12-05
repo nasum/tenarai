@@ -20,12 +20,25 @@
   }
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin-bottom: 120px;;
+}
+
 header {
   @include nav-style();
 }
 
 footer {
   @include nav-style();
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  position: absolute;
 }
 
 .content-body {
