@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :show, :update, :destroy]
 
   def index
-    @articles = Article.where(user: current_user).page(1).per(10).order("created_at DESC")
+    @articles = ArticleDecorator.decorate_collection(Article.where(user: current_user).page(1).per(10).order("created_at DESC"))
     render layout: "dashboard"
   end
 
