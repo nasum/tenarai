@@ -3,6 +3,8 @@
     .row
       .col-md-12
         .panel.panel-default
+          .panel-heading
+            = @article.title
           .panel-body
             = markdown @article.content
     .row
