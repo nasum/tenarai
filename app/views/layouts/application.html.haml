@@ -10,7 +10,6 @@
                              'data-turbolinks-track': 'reload'
   %body
     = render partial: "layouts/header"
-    - flash.each do |key, value|
-      = content_tag(:div, value, class: "alert bg-#{key}")
+    = render partial: "layouts/flash"
     = yield
     = render partial: "layouts/footer"

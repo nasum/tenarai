@@ -5,6 +5,8 @@
         no content
 - articles.each do |article|
   %article.blog-post.panel.panel-default
+    .panel-heading
+      = article.title
     .panel-body
       .content
         = markdown article.content

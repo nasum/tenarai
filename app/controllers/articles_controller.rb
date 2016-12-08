@@ -19,14 +19,23 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.create(article_params(params))
-    render action: :show
+    @article = current_user.articles.new(article_params(params))
+
+    if @article.save
+      flash.now[:success] = "create an article"
+      render action: :show
+    else
+      flash.now[:danger] = "could not create an article"
+      render action: :new
+    end
   end
 
   def update
     if @article.update_attributes(article_params(params))
+      flash.now[:success] = "edit an article"
       render action: :show
     else
+      flash.now[:danger] = "could not edit an article"
       render action: :edit
     end
   end
@@ -46,6 +55,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params(params)
-    params.require(:article).permit([:content])
+    params.require(:article).permit([:title,:content])
   end
 end
