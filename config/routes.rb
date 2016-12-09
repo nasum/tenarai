@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  resource :home, only: :index
   resources :member, only: [:index, :show]
   resources :dashboard, only: :index
 
@@ -8,5 +7,7 @@ Rails.application.routes.draw do
   get 'signin', to: 'signin#new'
   resource :signin, controller: :signin, only: [ :create, :destroy ]
   resources :articles
-  get ':user_name', to: 'user_articles#index', constraints: {user_name: /@.*/}
+  scope path: :'@:user_name', constraints: { user_name: /.*/ } do
+    root to: 'user_articles#index', as: :user_articles
+  end
 end
