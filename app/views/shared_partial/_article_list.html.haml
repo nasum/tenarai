@@ -5,10 +5,10 @@
         no content
 - articles.each do |article|
   %article.blog-post.panel.panel-default
-    .panel-heading
-      = article.title
     .panel-body
       .content
+        %h1
+          = article.title
         = markdown article.content
       .text-center
         = link_to 'more', user_article_path(article.user, article), class: 'btn btn-default'
