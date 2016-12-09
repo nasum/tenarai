@@ -11,6 +11,6 @@
       .content
         = markdown article.content
       .datetime.text-right
-        = link_to "@#{article.user.name}" do
+        = link_to user_articles_path(user_name: article.user.name) do
           = image_tag article.user.image.thumb.url, class: 'img-circle', width: 50, height: 50
         = article.created_at
