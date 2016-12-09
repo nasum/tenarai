@@ -6,6 +6,10 @@ class UserArticlesController < ApplicationController
     @articles = @user.articles.page(1).per(10).order("created_at DESC")
   end
 
+  def show
+    @article = @user.articles.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

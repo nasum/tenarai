@@ -10,6 +10,8 @@
     .panel-body
       .content
         = markdown article.content
+      .text-center
+        = link_to 'more', user_article_path(article.user, article), class: 'btn btn-default'
       .datetime.text-right
         = link_to user_articles_path(user_name: article.user.name) do
           = image_tag article.user.image.thumb.url, class: 'img-circle', width: 50, height: 50
