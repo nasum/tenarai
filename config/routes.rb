@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resource :signin, controller: :signin, only: [ :create, :destroy ]
   resources :articles
   scope path: :'@:user_name', constraints: { user_name: /.*/ } do
-    root to: 'user_articles#index', as: :user_articles
+    #root to: 'user_articles#index', path: 'articles', as: :user_articles
+    resources :user_articles, path: 'articles', only: [:index, :show]
   end
 end
