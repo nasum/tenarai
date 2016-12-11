@@ -1,6 +1,6 @@
 class UserArticlesController < ApplicationController
   before_action :set_user
-  skip_before_action :require_login, only: :index
+  skip_before_action :require_login
 
   def index
     @articles = @user.articles.page(1).per(10).order("created_at DESC")
