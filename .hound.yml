@@ -6,4 +6,4 @@ ruby:
 
 eslint:
   enabled: true
-  config_file: .eslint.json
+  config_file: .eslintrc.json
