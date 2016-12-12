@@ -6,7 +6,7 @@ module.exports = {
     app: './frontend/src/app.js',
   },
   output: {
-    path:  `${__dirname}/frontend/dist`,
+    path: `${__dirname}/frontend/dist`,
     filename: 'bundle.js',
   },
   module: {
