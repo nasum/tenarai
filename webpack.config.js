@@ -1,15 +1,15 @@
 'use strict';
 
-const webpack = require("webpack");
+const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
   entry: {
-    app: "./frontend/src/app.js",
+    app: './frontend/src/app.js',
   },
   output: {
-    path: __dirname + "/frontend/dist",
-    filename: "bundle.js",
+    path: __dirname + '/frontend/dist',
+    filename: 'bundle.js',
   },
   module: {
     rules: [
