@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: __dirname + "/frontend/dist",
-    filename: "[name].bundle.js",
+    filename: "bundle.js",
   },
   module: {
     rules: [
