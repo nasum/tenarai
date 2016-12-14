@@ -1,0 +1,8 @@
+.panel.panel-danger#error_explanation
+  .panel-heading
+    = pluralize(obj.errors.count, "error")
+  .panel-body
+    %ul
+      - obj.errors.full_messages.each do |message|
+        %li
+          = message

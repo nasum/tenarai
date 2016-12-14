@@ -10,7 +10,7 @@ class SigninController < ApplicationController
     if @signin.valid? && @user = login(@signin.email, @signin.password)
       redirect_back_or_to(:dashboard_index, success: 'Login successful')
     else
-      flash.now[:alert] = 'Login failed'
+      flash.now[:danger] = 'Login failed'
       render action: 'new'
     end
   end

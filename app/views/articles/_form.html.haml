@@ -1,4 +1,6 @@
 = form_for article do |f|
+  - if article.errors.any?
+    = render partial: 'shared_partial/error', locals: { obj: article }
   .form-group
     = f.text_field :title, class: 'form-control'
   .form-group
