@@ -1,13 +1,6 @@
 = form_for signin, url: signin_path do |f|
   - if signin.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(signin.errors.count, "error")
-      %ul
-        - signin.errors.full_messages.each do |message|
-          %li
-            = message
-
+    = render partial: 'shared_partial/error', locals: { obj: signin }
   .form-group
     = f.label :email
     = f.text_field :email, class: 'form-control'
