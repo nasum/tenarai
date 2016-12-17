@@ -1,5 +1,6 @@
 .content-body
-  .container
+  .container.article-container
     .row
-      .col-md-12
+      .col-md-6
         = render partial: 'form', locals: { article: @article }
+      .col-md-6.preview

@@ -48,6 +48,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def preview
+    render text: view_context.markdown(params[:article])
+  end
+
   private
 
   def set_article
