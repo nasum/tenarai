@@ -1,14 +1,14 @@
 .content-body
-  .container
+  .container.article-container
     .row
       .col-md-1
         .btn-group-vertical
           = link_to articles_path, class: 'btn btn-default btn-sm' do
             .glyphicon.glyphicon-arrow-left
             index
-
           = link_to article_path(@article), class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' }  do
             .glyphicon.glyphicon-remove
             delete
-      .col-md-11
+      .col-md-6
         = render partial: 'form', locals: { article: @article }
+      .col-md-5.preview
