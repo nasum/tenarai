@@ -8,6 +8,18 @@ RSpec.describe Article, type: :model do
       end
     end
 
+    context 'when not fill title column' do
+      it 'don`t create record' do
+        expect( build(:article, title: '') ).to_not be_valid
+      end
+    end
+
+    context 'when fill blank to title column' do
+      it 'don`t create record' do
+        expect( build(:article, title: '    ') ).to_not be_valid
+      end
+    end
+
     context 'when not fill content column' do
       it 'don`t create record' do
         expect( build(:article, content: '') ).to_not be_valid

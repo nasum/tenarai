@@ -20,4 +20,7 @@ RSpec.configure do |config|
     FactoryGirl.reload
   end
   config.include FactoryGirl::Syntax::Methods
+
+  config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
+  config.include Sorcery::TestHelpers::Rails::Integration, type: :feature
 end
