@@ -34,6 +34,9 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'annotate'
   gem 'faker'
+  gem 'guard-rspec'
+  gem 'terminal-notifier'
+  gem 'terminal-notifier-guard'
 end
 
 group :development do
