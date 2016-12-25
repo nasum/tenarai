@@ -53,3 +53,5 @@ bower.json
 .envrc
 node_modules
 frontend/dist
+
+.env
