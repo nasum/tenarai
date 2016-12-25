@@ -18,6 +18,7 @@ gem 'redcarpet'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+gem 'redis'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -37,6 +38,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'
+  gem 'dotenv-rails'
 end
 
 group :development do

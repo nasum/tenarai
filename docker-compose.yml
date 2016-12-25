@@ -11,3 +11,5 @@ db:
     - "5432:5432"
   volumes_from:
       - storage
+redis:
+  image: redis:latest

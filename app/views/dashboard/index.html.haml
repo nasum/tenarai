@@ -1,1 +1,15 @@
-index
+.row
+  .col-md-12
+    %h2
+      Ranking
+    %ul.list-group
+      - @articles.each do |article|
+        %li.list-group-item.row
+          .col-md-7
+            = link_to article_path(article) do
+              = article.title
+          .col-md-2
+            = article.show_count.to_i
+          .col-md-3
+            .badge
+              = article.created_at
