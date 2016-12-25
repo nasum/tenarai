@@ -39,6 +39,11 @@ group :development, :test do
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'
   gem 'dotenv-rails'
+  gem 'travis'
+end
+
+group :test do
+  gem 'codecov', :require => false
 end
 
 group :development do

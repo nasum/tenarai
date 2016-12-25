@@ -1,7 +1,7 @@
 language: ruby
 
 rvm:
- - 2.3.1
+ - 2.3.3
 
 bundler_args: --without development --deployment
 
@@ -17,3 +17,7 @@ script:
 
 services:
     - redis-server
+
+env:
+  global:
+    - secure: "Wat9ZfDd+aGyFM7zH3/DTxch6WjLWxHUOXC/0eum4y+dtq8dJ1gxPjXyqM4CJp+YypSQYX1BnruqagyZLPWbekK/QvqnSe9fE/6eKzSfV3tuhO4i8GjNnmPS9WswHrthjFAu4vVdaS5GvGjpIkkHR37yzpuovq5G4DUW94lOtstisnLWLnkxMCEkuJ6ZUUGrVAXMjzlz8SdJlNlzAch18c2HPbP1F2VA+U+EXLRmjYovqtIFfFsfEtK7pPo8dCzU4g2kbBW4OZXvan05LilDkqa+E2VmNiWGmqRGYZA3UACXSljJlEXjiQXsYqIZTy9Px4uLDQ+/P+SniEWDHe3vVZ8vDL1kaJvdvBJoW6ti/+5B5Hk2Usjlw3L3668TfNnzywQMe0h7vDUhi9XElR+E4fQt838Ejzh0KwtotzP5+2r+5JjnMpY4NZBTdve6HafvuSQSWx1aHWn8Rjy6Vp8G5WED9plZsOFGh3IYkhLw+ItnfHANbitcjYP0bBlPhGaoOerYKPPLHtnh0ZTZ58oJ/LdCFniD8R9t3SXSGxvG9OTdVy82fOBLVRIyh1s8jUI/m1EOFmSD+ylNUOICHrWbRze3d+WlmGdbCmzY5ez71xiJV1CZ3TKp7CIz49lVQNIoaVKTAr3lfi3HJYnmy9W6JtKj74wC12bItAvls59lhGU="
