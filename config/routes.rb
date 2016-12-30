@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :articles
+resources :users
+
+    root to: "articles#index"
+  end
+
   root to: 'home#index'
   resources :member, only: [:index, :show]
   resources :dashboard, only: :index
