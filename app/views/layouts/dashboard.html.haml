@@ -13,11 +13,11 @@
         .row
           .col-sm-3.col-md-2.sidebar
             %ul.nav.nav-pills.nav-stacked
-              %li.active
+              %li{ class: ('active' if controller.controller_name == 'dashboard') }
                 = link_to "Overview", dashboard_index_path
-              %li
+              %li{ class: ('active' if controller.controller_name == 'users') }
                 = link_to "Profile", user_path(current_user)
-              %li
+              %li{ class: ('active' if controller.controller_name == 'articles') }
                 = link_to "Articles", articles_path(current_user)
               %li
                 = link_to "Home", root_path
