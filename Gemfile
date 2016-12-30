@@ -19,6 +19,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'redis'
+gem "administrate", "~> 0.3.0"
 
 group :development, :test do
   gem 'byebug', platform: :mri
