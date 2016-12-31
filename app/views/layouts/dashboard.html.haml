@@ -18,7 +18,7 @@
               %li{ class: ('active' if controller.controller_name == 'users') }
                 = link_to "Profile", user_path(current_user)
               %li{ class: ('active' if controller.controller_name == 'articles') }
-                = link_to "Articles", articles_path(current_user)
+                = link_to "Articles", articles_path
               %li
                 = link_to "Home", root_path
           .col-sm-9.col-md-10.main
