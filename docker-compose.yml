@@ -13,3 +13,9 @@ db:
       - storage
 redis:
   image: redis:3.2.6
+
+elasticsearch:
+  image: nasum/elasticsearch-kuromoji:pre
+  ports:
+    - "9200:9200"
+    - "9300:9300"
