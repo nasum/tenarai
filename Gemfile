@@ -20,6 +20,8 @@ gem 'mini_magick'
 gem 'fog'
 gem 'redis'
 gem "administrate", "~> 0.3.0"
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
 
 group :development, :test do
   gem 'byebug', platform: :mri
