@@ -7,6 +7,7 @@ resources :users
   end
 
   root to: 'home#index'
+  get 'search', to: 'home#search'
   resources :member, only: [:index, :show]
   resources :dashboard, only: :index
 
