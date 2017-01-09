@@ -18,7 +18,7 @@ gem 'redcarpet'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-gem 'redis'
+gem 'redis', '3.3.2'
 gem "administrate", "~> 0.3.0"
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'

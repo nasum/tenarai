@@ -13,6 +13,8 @@ db:
       - storage
 redis:
   image: redis:3.2.6
+  ports:
+    - "6379:6379"
 
 elasticsearch:
   image: nasum/elasticsearch-kuromoji:0.0.1
