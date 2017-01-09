@@ -3,9 +3,11 @@
   .container
     .row
       .col-md-12
-        = form_tag root_path, method: :get do
-          = text_field_tag :search, params[:search]
-          = submit_tag 'Search', :name => nil
+        .form-area
+          = form_tag root_path, class: 'form-inline', method: :get do
+            .form-group
+              = text_field_tag :search, params[:search], class: 'form-control'
+            = submit_tag 'Search', class: 'btn btn-primary'
     .row
       .col-md-12
         = render partial: 'shared_partial/article_list', locals: { articles: @articles }
