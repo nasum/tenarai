@@ -4,6 +4,8 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
 
+  include ArticleSearchable
+
   def show_count
     REDIS.zscore "articles/#{self.user.id}", self.id
   end
