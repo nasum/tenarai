@@ -17,7 +17,7 @@ redis:
     - "6379:6379"
 
 elasticsearch:
-  image: nasum/elasticsearch-kuromoji:0.0.2
+  image: nasum/elasticsearch-kuromoji:0.0.3
   ports:
     - "9200:9200"
     - "9300:9300"
