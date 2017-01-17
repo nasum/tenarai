@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params(params))
 
     if @article.save
+      Article.create_index!
       flash.now[:success] = "create an article"
       render action: :show
     else
