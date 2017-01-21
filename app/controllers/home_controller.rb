@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @articles = if params[:search]
       Article.includes(:user).search(params[:search]).page(1).per(10).records
     else
-      Article.includes(:user).page(1).per(10)
+      Article.includes(:user).order('created_at DESC').page(1).per(10)
     end
   end
 end
