@@ -6,6 +6,10 @@ class Article < ApplicationRecord
 
   include ArticleSearchable
 
+  def author
+    self.user.name
+  end
+
   def show_count
     REDIS.zscore "articles/#{self.user.id}", self.id
   end
