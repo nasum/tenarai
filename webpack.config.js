@@ -26,6 +26,7 @@ module.exports = {
       }
     ],
   },
+  devtool: 'inline-source-map',
   resolveLoader: {
     modules: ['node_modules', `${__dirname}/node_modules`],
   }

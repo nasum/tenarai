@@ -1,6 +1,9 @@
 .content-body
   .container.article-container
     .row
+      .col-md-12
+        #editor
+          %Editor
       .col-md-6
         = render partial: 'form', locals: { article: @article }
       .col-md-6.preview
